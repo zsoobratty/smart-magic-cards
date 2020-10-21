@@ -85,9 +85,11 @@ function shuffleCards() {
 }
 
 function selectCard(e) {
-  console.log(e.target)
-  e.target.style.left = '0px'
-  selectedCardsWrapper.appendChild(e.target)
+  if(selectedCardsWrapper.children.length === 0) {
+    console.log(e.target)
+    e.target.style.left = '0px'
+    selectedCardsWrapper.appendChild(e.target)
+  }
 }
 
 

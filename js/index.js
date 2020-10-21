@@ -29,6 +29,7 @@ function renderCards() {
       cardElement.setAttribute('id', `${card.suit}-${card.value}`)
       cardElement.classList.add('card', `${card.suit}-${card.value}`);
       cardElement.style.left = `${positionFromLeft}px`;
+      cardElement.addEventListener('click', selectCard)
       cardsWrapper.append(cardElement);
     });
 }
@@ -83,20 +84,10 @@ function shuffleCards() {
   renderCards()
 }
 
-
-
-cardsWrapper.onclick = (e) => {
-  if (selectedCardsWrapper.classList.length === 1) {
-    const domCard = e.target.classList
-    const arrCard = [...domCard]
-    console.log(arrCard[0], arrCard[1])
-    document.getElementById(arrCard[1]).remove()
-    selectedCardsWrapper.classList.add(arrCard[0], arrCard[1])
-    document.getElementById('shuffle').disabled = true
-    document.getElementById('magic').hidden = false
-  } else {
-    alert('You have already selected a card')
-  }
+function selectCard(e) {
+  console.log(e.target)
+  e.target.style.left = '0px'
+  selectedCardsWrapper.appendChild(e.target)
 }
 
 
@@ -108,4 +99,18 @@ function startGame() {
 }
 
 document.getElementById('start-game').addEventListener('click', startGame);
+
+// cardsWrapper.onclick = (e) => {
+//   if (selectedCardsWrapper.classList.length === 1) {
+//     const arrCard = [...e.target.classList]
+//     document.getElementById(arrCard[1]).remove()
+//     selectedCardsWrapper.classList.add(arrCard[0], arrCard[1])
+//     selectedCardsWrapper.setAttribute('id', arrCard[1])
+//     document.getElementById('shuffle').disabled = true
+//     document.getElementById('magic').hidden = false
+//   } else {
+//     alert('You have already selected a card')
+//   }
+// }
+
 

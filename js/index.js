@@ -121,7 +121,9 @@ function generatePlayBtn() {
 
 function handlePlayAgain() {
   selectedCard = ''
-  selectedCardsWrapper.querySelectorAll('*').forEach(n => n.remove())
+  selectedCardsWrapper.innerHTML = ''
+  cardsWrapper.innerHTML = ''
+  cards = []
   console.log(selectedCardsWrapper)
   btnWrapper.removeChild(document.getElementById('play-again'))
   startGame()

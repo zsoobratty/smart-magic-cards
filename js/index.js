@@ -60,7 +60,7 @@ function createButtons() {
   const flipBtn = document.createElement("button");
   flipBtn.classList.add("btn", "btn-lg", "btn-secondary");
   flipBtn.setAttribute("id", "flip");
-  flipBtn.textContent = "Flip";
+  flipBtn.textContent = "Flip cards";
   flipBtn.style.margin = "10px";
   flipBtn.addEventListener("click", () => {
     cardsWrapper.classList.toggle("hidden");

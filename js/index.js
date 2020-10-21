@@ -90,6 +90,7 @@ cardsWrapper.onclick = (e) => {
     console.log(arrCard[0], arrCard[1])
     document.getElementById(arrCard[1]).remove()
     selectedCardsWrapper.classList.add(arrCard[0], arrCard[1])
+    document.getElementById('shuffle').disabled = true
   
   } else {
     console.log('You have already selected a card')

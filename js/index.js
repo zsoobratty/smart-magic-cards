@@ -62,13 +62,14 @@ function createButtons() {
   })
   btnWrapper.append(flipBtn)
   
-  // Magic button
+}
+
+function createMagicBtn() {
   const magicBtn = document.createElement('button')
   magicBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
   magicBtn.setAttribute('id', 'magic')
   magicBtn.textContent = 'Magic'
   magicBtn.style.margin = '10px'
-  magicBtn.hidden = true
   btnWrapper.append(magicBtn)
 }
 
@@ -88,7 +89,7 @@ function selectCard(e) {
   if(selectedCardsWrapper.children.length === 0) {
     e.target.style.left = '0px'
     selectedCardsWrapper.appendChild(e.target)
-    document.getElementById('magic').hidden = false
+    createMagicBtn()
   }
 }
 
@@ -102,6 +103,9 @@ function startGame() {
 
 document.getElementById('start-game').addEventListener('click', startGame);
 
+
+
+// Crazy logic for the memories:
 // cardsWrapper.onclick = (e) => {
 //   if (selectedCardsWrapper.classList.length === 1) {
 //     const arrCard = [...e.target.classList]

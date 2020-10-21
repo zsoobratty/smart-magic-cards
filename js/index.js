@@ -38,16 +38,20 @@ function createButtons() {
   const shuffleBtn = document.createElement('button')
   shuffleBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
   shuffleBtn.textContent = 'Shuffle'
+  shuffleBtn.style.margin = '10px'
   btnWrapper.append(shuffleBtn)
+
 
   const flipBtn = document.createElement('button')
   flipBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
   flipBtn.textContent = 'Flip'
+  flipBtn.style.margin = '10px'
   btnWrapper.append(flipBtn)
 
   const magicBtn = document.createElement('button')
   magicBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
   magicBtn.textContent = 'Magic'
+  magicBtn.style.margin = '10px'
   btnWrapper.append(magicBtn)
 }
 

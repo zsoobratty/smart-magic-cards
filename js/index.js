@@ -1,11 +1,10 @@
-
 const suit = ['hearts', 'diamonds', 'clubs', 'spades'];
 const cardsWrapper = document.querySelector('.cards-wrapper');
 const btnWrapper = document.querySelector('.btn-wrapper'); /* eslint-disable-line */
 const selectedCardsWrapper = document.querySelector('.selected-cards'); /* eslint-disable-line */
 let cards = []
 
-
+// Creates an object with values and suits
 function createCards() {
   // Create an array with objects containing the value and the suit of each card
   for (let x = 0; x <= 3; x++) {
@@ -20,12 +19,14 @@ function createCards() {
   renderCards()
 }
 
+// Takes object and gives it elements to render onto page
 function renderCards() {
     // For each dataObject, create a new card and append it to the DOM
     cards.forEach((card, i) => {
       const positionFromLeft = i * 27;
       const cardElement = document.createElement('div');
       cardElement.setAttribute('data-value', card.value);
+      cardElement.setAttribute('id', `${card.suit}-${card.value}`)
       cardElement.classList.add('card', `${card.suit}-${card.value}`);
       cardElement.style.left = `${positionFromLeft}px`;
       cardsWrapper.append(cardElement);
@@ -72,7 +73,7 @@ function createButtons() {
 // Function to shuffle the cards using the shuffle button
 function shuffleCards() {
   for (let i = cards.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1))
+    let j = Math.floor(Math.random() * (i))
     let tempCard = cards[i]
     cards[i] = cards[j]
     cards[j] = tempCard
@@ -81,10 +82,15 @@ function shuffleCards() {
   renderCards()
 }
 
-// function flipCards() { 
-// flipBtn = document.getElementById('flip')
-// cardsWrapper.classList.toggle('hidden')
-// }
+
+cardsWrapper.onclick = (e) => {
+  const domCard = e.target.classList
+  const arrCard = [...domCard]
+  console.log(arrCard[0], arrCard[1])
+  document.getElementById(arrCard[1]).remove()
+  selectedCardsWrapper.classList.add(arrCard[0], arrCard[1])
+}
+
 
 // Function to start the game by clearing the wrapper, creating
 // and appending the buttons and all the cards to the DOM
@@ -94,3 +100,4 @@ function startGame() {
 }
 
 document.getElementById('start-game').addEventListener('click', startGame);
+

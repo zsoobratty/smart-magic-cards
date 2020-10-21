@@ -3,6 +3,7 @@ const cardsWrapper = document.querySelector('.cards-wrapper');
 const btnWrapper = document.querySelector('.btn-wrapper'); /* eslint-disable-line */
 const selectedCardsWrapper = document.querySelector('.selected-cards'); /* eslint-disable-line */
 let cards = []
+let selectedCard = ''
 
 // Creates an object with values and suits
 function createCards() {
@@ -70,6 +71,7 @@ function createMagicBtn() {
   magicBtn.setAttribute('id', 'magic')
   magicBtn.textContent = 'Magic'
   magicBtn.style.margin = '10px'
+  magicBtn.addEventListener('click', handleMagicBtn)
   btnWrapper.append(magicBtn)
 }
 
@@ -89,10 +91,20 @@ function selectCard(e) {
   if(selectedCardsWrapper.children.length === 0) {
     e.target.style.left = '0px'
     selectedCardsWrapper.appendChild(e.target)
+    selectedCard = e.target
     createMagicBtn()
   }
 }
 
+function handleMagicBtn() {
+  const selectedCardValue = selectedCard.getAttribute('data-value')
+  const cardMatches = document.querySelectorAll(`[data-value='${selectedCardValue}']`)
+  console.log(cardMatches)
+  console.log(selectedCard)
+  cardMatches.forEach(card => {
+    selectedCardsWrapper.append(card)
+  })
+}
 
 // Function to start the game by clearing the wrapper, creating
 // and appending the buttons and all the cards to the DOM
@@ -102,7 +114,6 @@ function startGame() {
 }
 
 document.getElementById('start-game').addEventListener('click', startGame);
-
 
 
 // Crazy logic for the memories:

@@ -35,7 +35,20 @@ function createButtons() {
   startBtn.hidden = true
 
   // Generate buttons
+  const shuffleBtn = document.createElement('button')
+  shuffleBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
+  shuffleBtn.textContent = 'Shuffle'
+  btnWrapper.append(shuffleBtn)
 
+  const flipBtn = document.createElement('button')
+  flipBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
+  flipBtn.textContent = 'Flip'
+  btnWrapper.append(flipBtn)
+
+  const magicBtn = document.createElement('button')
+  magicBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
+  magicBtn.textContent = 'Magic'
+  btnWrapper.append(magicBtn)
 }
 
 // Function to start the game by clearing the wrapper, creating

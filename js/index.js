@@ -64,6 +64,7 @@ function createButtons() {
   // Magic button
   const magicBtn = document.createElement('button')
   magicBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
+  magicBtn.setAttribute('id', 'magic')
   magicBtn.textContent = 'Magic'
   magicBtn.style.margin = '10px'
   magicBtn.hidden = true
@@ -83,6 +84,7 @@ function shuffleCards() {
 }
 
 
+
 cardsWrapper.onclick = (e) => {
   if (selectedCardsWrapper.classList.length === 1) {
     const domCard = e.target.classList
@@ -91,11 +93,12 @@ cardsWrapper.onclick = (e) => {
     document.getElementById(arrCard[1]).remove()
     selectedCardsWrapper.classList.add(arrCard[0], arrCard[1])
     document.getElementById('shuffle').disabled = true
-  
+    document.getElementById('magic').hidden = false
   } else {
-    console.log('You have already selected a card')
+    alert('You have already selected a card')
   }
 }
+
 
 // Function to start the game by clearing the wrapper, creating
 // and appending the buttons and all the cards to the DOM

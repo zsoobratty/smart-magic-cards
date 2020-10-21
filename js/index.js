@@ -101,7 +101,8 @@ function handleMagicBtn() {
   const cardMatches = document.querySelectorAll(`[data-value='${selectedCardValue}']`)
   console.log(cardMatches)
   console.log(selectedCard)
-  cardMatches.forEach(card => {
+  cardMatches.forEach((card, index) => {
+    card.style.left = `${index * 30}px`
     selectedCardsWrapper.append(card)
   })
 }

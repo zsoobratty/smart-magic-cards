@@ -84,13 +84,17 @@ function shuffleCards() {
 
 
 cardsWrapper.onclick = (e) => {
-  const domCard = e.target.classList
-  const arrCard = [...domCard]
-  console.log(arrCard[0], arrCard[1])
-  document.getElementById(arrCard[1]).remove()
-  selectedCardsWrapper.classList.add(arrCard[0], arrCard[1])
+  if (selectedCardsWrapper.classList.length === 1) {
+    const domCard = e.target.classList
+    const arrCard = [...domCard]
+    console.log(arrCard[0], arrCard[1])
+    document.getElementById(arrCard[1]).remove()
+    selectedCardsWrapper.classList.add(arrCard[0], arrCard[1])
+  
+  } else {
+    console.log('You have already selected a card')
+  }
 }
-
 
 // Function to start the game by clearing the wrapper, creating
 // and appending the buttons and all the cards to the DOM

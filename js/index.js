@@ -1,3 +1,4 @@
+
 const suit = ['hearts', 'diamonds', 'clubs', 'spades'];
 const cardsWrapper = document.querySelector('.cards-wrapper');
 const btnWrapper = document.querySelector('.btn-wrapper'); /* eslint-disable-line */
@@ -16,17 +17,19 @@ function createCards() {
       cards.push(cardObject);
     }
   }
+  renderCards()
+}
 
-
-  // For each dataObject, create a new card and append it to the DOM
-  cards.forEach((card, i) => {
-    const positionFromLeft = i * 27;
-    const cardElement = document.createElement('div');
-    cardElement.setAttribute('data-value', card.value);
-    cardElement.classList.add('card', `${card.suit}-${card.value}`);
-    cardElement.style.left = `${positionFromLeft}px`;
-    cardsWrapper.append(cardElement);
-  });
+function renderCards() {
+    // For each dataObject, create a new card and append it to the DOM
+    cards.forEach((card, i) => {
+      const positionFromLeft = i * 27;
+      const cardElement = document.createElement('div');
+      cardElement.setAttribute('data-value', card.value);
+      cardElement.classList.add('card', `${card.suit}-${card.value}`);
+      cardElement.style.left = `${positionFromLeft}px`;
+      cardsWrapper.append(cardElement);
+    });
 }
 
 // Function to clear out the initial button and create new buttons to play the game.
@@ -49,6 +52,7 @@ function createButtons() {
   // Flip button
   const flipBtn = document.createElement('button')
   flipBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
+  flipBtn.setAttribute('id', 'flip')
   flipBtn.textContent = 'Flip'
   flipBtn.style.margin = '10px'
   btnWrapper.append(flipBtn)
@@ -64,7 +68,6 @@ function createButtons() {
 
 // Function to shuffle the cards using the shuffle button
 function shuffleCards() {
-  console.log(cards.length)
   for (let i = cards.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1))
     let tempCard = cards[i]
@@ -72,8 +75,13 @@ function shuffleCards() {
     cards[j] = tempCard
   }
   console.log(cards)
-  console.log(cards.length)
+  renderCards()
 }
+
+// function flipCards() { 
+// flipBtn = document.getElementById('flip')
+// cardsWrapper.classList.toggle('hidden')
+// }
 
 // Function to start the game by clearing the wrapper, creating
 // and appending the buttons and all the cards to the DOM

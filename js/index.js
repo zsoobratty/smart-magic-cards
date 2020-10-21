@@ -30,7 +30,12 @@ function createCards() {
 
 // Function to clear out the initial button and create new buttons to play the game.
 function createButtons() {
-  // Your Code
+  // Hide button when game starts
+  const startBtn = document.getElementById('start-game')
+  startBtn.hidden = true
+
+  // Generate buttons
+
 }
 
 // Function to start the game by clearing the wrapper, creating

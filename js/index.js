@@ -2,9 +2,10 @@ const suit = ['hearts', 'diamonds', 'clubs', 'spades'];
 const cardsWrapper = document.querySelector('.cards-wrapper');
 const btnWrapper = document.querySelector('.btn-wrapper'); /* eslint-disable-line */
 const selectedCardsWrapper = document.querySelector('.selected-cards'); /* eslint-disable-line */
+let cards = []
+
 
 function createCards() {
-  const cards = [];
   // Create an array with objects containing the value and the suit of each card
   for (let x = 0; x <= 3; x++) {
     for (let i = 1; i <= 13; i += 1) {
@@ -35,24 +36,43 @@ function createButtons() {
   startBtn.hidden = true
 
   // Generate buttons
+
+  // Shuffle button
   const shuffleBtn = document.createElement('button')
   shuffleBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
+  shuffleBtn.setAttribute('id', 'shuffle')
   shuffleBtn.textContent = 'Shuffle'
   shuffleBtn.style.margin = '10px'
+  shuffleBtn.addEventListener('click', shuffleCards);
   btnWrapper.append(shuffleBtn)
 
+  // Flip button
   const flipBtn = document.createElement('button')
   flipBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
   flipBtn.textContent = 'Flip'
   flipBtn.style.margin = '10px'
   btnWrapper.append(flipBtn)
-
+  
+  // Magic button
   const magicBtn = document.createElement('button')
   magicBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
   magicBtn.textContent = 'Magic'
   magicBtn.style.margin = '10px'
   magicBtn.hidden = true
   btnWrapper.append(magicBtn)
+}
+
+// Function to shuffle the cards using the shuffle button
+function shuffleCards() {
+  console.log(cards.length)
+  for (let i = cards.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1))
+    let tempCard = cards[i]
+    cards[i] = cards[j]
+    cards[j] = tempCard
+  }
+  console.log(cards)
+  console.log(cards.length)
 }
 
 // Function to start the game by clearing the wrapper, creating

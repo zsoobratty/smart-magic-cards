@@ -55,6 +55,9 @@ function createButtons() {
   flipBtn.setAttribute('id', 'flip')
   flipBtn.textContent = 'Flip'
   flipBtn.style.margin = '10px'
+  flipBtn.addEventListener('click', () => {
+    cardsWrapper.classList.toggle('hidden')
+  })
   btnWrapper.append(flipBtn)
   
   // Magic button

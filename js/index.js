@@ -93,11 +93,12 @@ function createMagicBtn() {
 // Function to shuffle the cards using the shuffle button
 function shuffleCards() {
   for (let i = cards.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * i);
+    let j = Math.floor(Math.random() * (i));
     const tempCard = cards[i];
     cards[i] = cards[j];
     cards[j] = tempCard;
   }
+  cardsWrapper.innerHTML = ''
   renderCards();
 }
 
@@ -108,7 +109,6 @@ function selectCard(e) {
     selectedCard = e.target;
     createMagicBtn();
   }
-  document.getElementById("shuffle").disabled = true;
 }
 
 function handlePlayAgain() {

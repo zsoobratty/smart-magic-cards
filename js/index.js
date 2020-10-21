@@ -109,7 +109,7 @@ function selectCard(e) {
       suit: selectedCardSuit
     }
     cards = cards.filter(card => { 
-      for(let key in filterCriteria) {
+      for(const key in filterCriteria) {
         if(card[key] === undefined || card[key] != filterCriteria[key])
           return true
       }
@@ -124,7 +124,6 @@ function handlePlayAgain() {
   selectedCardsWrapper.innerHTML = "";
   cardsWrapper.innerHTML = "";
   cards = [];
-  console.log(selectedCardsWrapper);
   btnWrapper.removeChild(document.getElementById("play-again"));
   startGame();
 }

@@ -83,7 +83,6 @@ function shuffleCards() {
     cards[i] = cards[j]
     cards[j] = tempCard
   }
-  console.log(cards)
   renderCards()
 }
 
@@ -99,12 +98,14 @@ function selectCard(e) {
 function handleMagicBtn() {
   const selectedCardValue = selectedCard.getAttribute('data-value')
   const cardMatches = document.querySelectorAll(`[data-value='${selectedCardValue}']`)
-  console.log(cardMatches)
-  console.log(selectedCard)
   cardMatches.forEach((card, index) => {
     card.style.left = `${index * 30}px`
     selectedCardsWrapper.append(card)
   })
+}
+
+function handlePlayAgain() {
+
 }
 
 // Function to start the game by clearing the wrapper, creating

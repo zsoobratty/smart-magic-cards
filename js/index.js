@@ -39,14 +39,9 @@ function renderCards() {
   });
 }
 
-// Function to clear out the initial button and create new buttons to play the game.
+// Function to create new shuffle and flip buttons
 function createButtons() {
-  // // Hide button when game starts
-  // const startBtn = document.getElementById("start-game");
-  // startBtn.hidden = true;
-
   // Generate buttons
-
   // Shuffle button
   const shuffleBtn = document.createElement("button");
   shuffleBtn.classList.add("btn", "btn-lg", "btn-secondary");
@@ -67,7 +62,7 @@ function createButtons() {
   });
   btnWrapper.append(flipBtn);
 }
-
+// Separate generation of magic button as not required until card selection
 function handleMagicBtn() {
   const selectedCardValue = selectedCard.getAttribute("data-value");
   const cardMatches = document.querySelectorAll(
@@ -107,6 +102,19 @@ function selectCard(e) {
     e.target.style.left = "0px";
     selectedCardsWrapper.appendChild(e.target);
     selectedCard = e.target;
+    const selectedCardNo = selectedCard.getAttribute('id').split('-')[1]
+    const selectedCardSuit = selectedCard.getAttribute('id').split('-')[0]
+    let filterCriteria = {
+      value: parseInt(selectedCardNo),
+      suit: selectedCardSuit
+    }
+    cards = cards.filter(card => { 
+      for(let key in filterCriteria) {
+        if(card[key] === undefined || card[key] != filterCriteria[key])
+          return true
+      }
+      return false
+    })
     createMagicBtn();
   }
 }
@@ -133,8 +141,6 @@ function generatePlayBtn() {
   playBtn.addEventListener("click", handlePlayAgain);
   btnWrapper.append(playBtn);
 }
-
-
 
 // Function to start the game by clearing the wrapper, creating
 // and appending the buttons and all the cards to the DOM

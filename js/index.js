@@ -41,7 +41,6 @@ function createButtons() {
   shuffleBtn.style.margin = '10px'
   btnWrapper.append(shuffleBtn)
 
-
   const flipBtn = document.createElement('button')
   flipBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
   flipBtn.textContent = 'Flip'
@@ -52,6 +51,7 @@ function createButtons() {
   magicBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
   magicBtn.textContent = 'Magic'
   magicBtn.style.margin = '10px'
+  magicBtn.hidden = true
   btnWrapper.append(magicBtn)
 }
 

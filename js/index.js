@@ -12,11 +12,11 @@ let selectedCard = '';
 // Creates an object with values and suits
 function createCards() {
   // Create an array with objects containing the value and the suit of each card
-  for (let x = 0; x <= 3; x++) {
+  for (let x = 0; x <= 3; x += 1) {
     for (let i = 1; i <= 13; i += 1) {
       const cardObject = {
         value: i,
-        suit: suit[x],
+        suit: suit[x]
       };
       cards.push(cardObject);
     }
@@ -37,6 +37,18 @@ function renderCards() {
     cardElement.addEventListener('click', selectCard);
     cardsWrapper.append(cardElement);
   });
+}
+
+// Function to shuffle the cards using the shuffle button
+function shuffleCards() {
+  for (let i = cards.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * i);
+    const tempCard = cards[i];
+    cards[i] = cards[j];
+    cards[j] = tempCard;
+  }
+  cardsWrapper.innerHTML = '';
+  renderCards();
 }
 
 // Function to create new shuffle and flip buttons
@@ -62,6 +74,7 @@ function createButtons() {
   });
   btnWrapper.append(flipBtn);
 }
+
 // Separate generation of magic button as not required until card selection
 function handleMagicBtn() {
   const selectedCardValue = selectedCard.getAttribute('data-value');
@@ -85,27 +98,16 @@ function createMagicBtn() {
   btnWrapper.append(magicBtn);
 }
 
-// Function to shuffle the cards using the shuffle button
-function shuffleCards() {
-  for (let i = cards.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * i);
-    const tempCard = cards[i];
-    cards[i] = cards[j];
-    cards[j] = tempCard;
-  }
-  cardsWrapper.innerHTML = '';
-  renderCards();
-}
-
+// Function to select the card that is clicked and append to selectedCardsWrapper
 function selectCard(e) {
   if (selectedCardsWrapper.children.length === 0) {
     e.target.style.left = '0px';
     selectedCardsWrapper.appendChild(e.target);
     selectedCard = e.target;
-    const selectedCardNo = selectedCard.getAttribute('id').split('-')[1];
+    const selectedCardNo = parseInt(selectedCard.getAttribute('id').split('-')[1]);
     const selectedCardSuit = selectedCard.getAttribute('id').split('-')[0];
     const filterCriteria = {
-      value: parseInt(selectedCardNo),
+      value: selectedCardNo,
       suit: selectedCardSuit,
     };
     cards = cards.filter((card) => {

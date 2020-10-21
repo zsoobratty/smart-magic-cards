@@ -103,7 +103,6 @@ function handleMagicBtn() {
     card.style.left = `${index * 30}px`
     selectedCardsWrapper.append(card)
   })
-  console.log(selectedCardsWrapper)
   generatePlayBtn()
 }
 
@@ -121,8 +120,10 @@ function generatePlayBtn() {
 }
 
 function handlePlayAgain() {
-  selectedCards = ''
+  selectedCard = ''
   selectedCardsWrapper.querySelectorAll('*').forEach(n => n.remove())
+  console.log(selectedCardsWrapper)
+  btnWrapper.removeChild(document.getElementById('play-again'))
   startGame()
 }
 

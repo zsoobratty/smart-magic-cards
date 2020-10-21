@@ -93,6 +93,7 @@ function selectCard(e) {
     selectedCard = e.target
     createMagicBtn()
   }
+  document.getElementById('shuffle').disabled = true
 }
 
 function handleMagicBtn() {
@@ -102,10 +103,23 @@ function handleMagicBtn() {
     card.style.left = `${index * 30}px`
     selectedCardsWrapper.append(card)
   })
+  console.log(selectedCardsWrapper)
+  handlePlayAgain()
 }
 
 function handlePlayAgain() {
-
+  btnWrapper.removeChild(document.getElementById('shuffle'))
+  btnWrapper.removeChild(document.getElementById('flip'))
+  btnWrapper.removeChild(document.getElementById('magic'))
+  selectedCards = ''
+  selectedCardsWrapper.querySelectorAll('*').forEach(n => n.remove())
+  const playBtn = document.createElement('button')
+  playBtn.classList.add('btn', 'btn-lg', 'btn-secondary')
+  playBtn.setAttribute('id', 'play-again')
+  playBtn.textContent = 'Play Again?'
+  playBtn.style.margin = '10px'
+  playBtn.addEventListener('click', startGame)
+  btnWrapper.append(playBtn)
 }
 
 // Function to start the game by clearing the wrapper, creating

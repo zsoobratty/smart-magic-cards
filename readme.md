@@ -12,16 +12,16 @@ Eg. the 8 of hears it picked, now all the 8's are removed from the deck and adde
 - [x] Make sure all 4 suits of cards are rendered and sorted by suit. There are 13 cards in each suit ( ♥, ♣, ♦, ♠ ).
 - [x] Make sure the value for each card is visible on the initial render, basically move each card a bit so the card is readable.
 - [x] Add 3 buttons to the flow that will allow you to do 3 actions:
-  - **Shuffle:** Randomly shuffles all cards.
-  - **Flip cards:** Turn all the cards face down by adding a class (CSS is already included).
-  - **Magic:** Remove all related cards from the deck after picking a card. (Only display this button after a card has been picked).
+  - [x] **Shuffle:** Randomly shuffles all cards.
+  - [x] **Flip cards:** Turn all the cards face down by adding a class (CSS is already included).
+  - [x] **Magic:** Remove all related cards from the deck after picking a card. (Only display this button after a card has been picked).
 - [x] Create the functionality to pick a card, by clicking on a random card.
 - [x] When the trick is performed (by clicking the magic button), move the related cards to the picked card.
 
 #### Bonus points
   - [ ] Find a way to remove duplications in the `cards.scss` file and generate all the classes automatically for the cards: `.hearts-1`, `.hearts-2`, ... , `.spades-13`.
   - [x] Add animation.
-  - Do not use images for the cards, style them with CSS/SCSS only.
+  - [ ] Do not use images for the cards, style them with CSS/SCSS only.
   - [x] Uncomment the tests in the `cypress/integration/magic-trick.js` file and **make sure the tests pass**.
   - [ ] Add additional tests (we like test coverage).
   - [ ] Usuage of drag and drop to pick a card.

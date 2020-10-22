@@ -19,14 +19,14 @@ Eg. the 8 of hears it picked, now all the 8's are removed from the deck and adde
 - [x] When the trick is performed (by clicking the magic button), move the related cards to the picked card.
 
 #### Bonus points
-  - [] Find a way to remove duplications in the `cards.scss` file and generate all the classes automatically for the cards: `.hearts-1`, `.hearts-2`, ... , `.spades-13`.
+  - [ ] Find a way to remove duplications in the `cards.scss` file and generate all the classes automatically for the cards: `.hearts-1`, `.hearts-2`, ... , `.spades-13`.
   - [x] Add animation.
   - Do not use images for the cards, style them with CSS/SCSS only.
   - [x] Uncomment the tests in the `cypress/integration/magic-trick.js` file and **make sure the tests pass**.
-  - [] Add additional tests (we like test coverage).
-  - [] Usuage of drag and drop to pick a card.
+  - [ ] Add additional tests (we like test coverage).
+  - [ ] Usuage of drag and drop to pick a card.
   - [x] Having a way of resetting the app, withouth reloading the page.
-  - [] Do not break any linting rules. (The linter runs before tests)
+  - [ ] Do not break any linting rules. (The linter runs before tests)
   - [x] Add some extra functionality, this is your chance to be creative. 😉
 
 #### Example

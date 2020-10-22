@@ -34,7 +34,7 @@ function renderCards() {
     cardElement.setAttribute('id', `${card.suit}-${card.value}`);
     cardElement.classList.add('card', `${card.suit}-${card.value}`);
     cardElement.style.left = `${positionFromLeft}px`;
-    cardElement.style.animationName = 'enterFromLeft'
+    cardElement.style.animation = 'enterFromLeft'
     cardElement.style.animationDuration = '0.5s'
     cardElement.addEventListener('click', selectCard);
     cardsWrapper.append(cardElement);

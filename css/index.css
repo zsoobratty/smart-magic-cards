@@ -5977,6 +5977,11 @@ h1 {
   border-radius: 6px;
   position: relative;
 }
+@keyframes enterFromLeft {
+  0% {
+    left: 0px;
+  }
+}
 
 .body-bg {
   background: #165a1c;

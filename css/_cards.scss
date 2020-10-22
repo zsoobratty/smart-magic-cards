@@ -173,6 +173,7 @@
   margin: 0 2rem;
   border-radius: 10px;
 
+
   &.hidden {
     .card {
       background: rgb(0,212,255);
@@ -190,5 +191,11 @@
     border: 2px dashed white;
     border-radius: 6px;
     position: relative;
+
+  }
+  @keyframes enterFromLeft {
+    0% {
+      left: 0px;
+    }
   }
 }

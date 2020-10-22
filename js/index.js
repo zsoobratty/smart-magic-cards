@@ -34,6 +34,8 @@ function renderCards() {
     cardElement.setAttribute('id', `${card.suit}-${card.value}`);
     cardElement.classList.add('card', `${card.suit}-${card.value}`);
     cardElement.style.left = `${positionFromLeft}px`;
+    cardElement.style.animationName = 'enterFromLeft'
+    cardElement.style.animationDuration = '0.7s'
     cardElement.addEventListener('click', selectCard);
     cardsWrapper.append(cardElement);
   });
@@ -42,7 +44,7 @@ function renderCards() {
 // Function to shuffle the cards using the shuffle button
 function shuffleCards() {
   for (let i = cards.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1)));
+    const j = Math.floor(Math.random() * (i + 1));
     const tempCard = cards[i];
     cards[i] = cards[j];
     cards[j] = tempCard;

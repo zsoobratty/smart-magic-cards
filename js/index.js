@@ -36,7 +36,7 @@ function renderCards() {
     cardElement.style.left = `${positionFromLeft}px`;
     cardElement.style.animation = 'enterFromLeft';
     cardElement.style.animationDuration = '0.5s';
-    cardElement.addEventListener('click', selectCard);
+    cardElement.addEventListener('click', handleSelectCard);
     cardsWrapper.append(cardElement);
   });
 }
@@ -78,7 +78,7 @@ function createButtons() {
 }
 
 // Separate generation of magic button as not required until card selection
-function handleMagicBtn() {
+function handleMagic() {
   const selectedCardValue = selectedCard.getAttribute('data-value');
   const cardMatches = document.querySelectorAll(
     `[data-value='${selectedCardValue}']`
@@ -87,7 +87,7 @@ function handleMagicBtn() {
     card.style.left = `${index * 30}px`;
     selectedCardsWrapper.append(card);
   });
-  generatePlayBtn();
+  createPlayBtn();
   btnWrapper.removeChild(document.getElementById('shuffle'));
   btnWrapper.removeChild(document.getElementById('flip'));
   btnWrapper.removeChild(document.getElementById('magic'));
@@ -100,13 +100,13 @@ function createMagicBtn() {
   magicBtn.setAttribute('id', 'magic');
   magicBtn.textContent = 'Magic';
   magicBtn.style.margin = '10px';
-  magicBtn.addEventListener('click', handleMagicBtn);
+  magicBtn.addEventListener('click', handleMagic);
   magicBtn.addEventListener('click', () => new Audio('../assets/sounds/magic.wav').play());
   btnWrapper.append(magicBtn);
 }
 
 // Function to select the card that is clicked and append to selectedCardsWrapper
-function selectCard(e) {
+function handleSelectCard(e) {
   if (!selectedCardsWrapper.hasChildNodes()) {
     e.target.style.left = '0px';
     selectedCardsWrapper.appendChild(e.target);
@@ -145,7 +145,7 @@ function handlePlayAgain() {
 }
 
 // Function to generate the play button
-function generatePlayBtn() {
+function createPlayBtn() {
   const playBtn = document.createElement('button');
   playBtn.classList.add('btn', 'btn-lg', 'btn-secondary');
   playBtn.setAttribute('id', 'play-again');

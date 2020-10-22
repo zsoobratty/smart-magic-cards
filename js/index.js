@@ -9,7 +9,6 @@ const selectedCardsWrapper = document.querySelector(
 let cards = [];
 let selectedCard = '';
 
-
 // Creates an object with values and suits
 function createCards() {
   // Create an array with objects containing the value and the suit of each card
@@ -17,7 +16,7 @@ function createCards() {
     for (let i = 1; i <= 13; i += 1) {
       const cardObject = {
         value: i,
-        suit: suit[x]
+        suit: suit[x],
       };
       cards.push(cardObject);
     }
@@ -35,8 +34,8 @@ function renderCards() {
     cardElement.setAttribute('id', `${card.suit}-${card.value}`);
     cardElement.classList.add('card', `${card.suit}-${card.value}`);
     cardElement.style.left = `${positionFromLeft}px`;
-    cardElement.style.animation = 'enterFromLeft'
-    cardElement.style.animationDuration = '0.5s'
+    cardElement.style.animation = 'enterFromLeft';
+    cardElement.style.animationDuration = '0.5s';
     cardElement.addEventListener('click', selectCard);
     cardsWrapper.append(cardElement);
   });
@@ -98,7 +97,7 @@ function createMagicBtn() {
   magicBtn.textContent = 'Magic';
   magicBtn.style.margin = '10px';
   magicBtn.addEventListener('click', handleMagicBtn);
-  magicBtn.addEventListener('click', () => new Audio('../assets/sounds/magic.wav').play())
+  magicBtn.addEventListener('click', () => new Audio('../assets/sounds/magic.wav').play());
   btnWrapper.append(magicBtn);
 }
 
@@ -108,13 +107,15 @@ function selectCard(e) {
     e.target.style.left = '0px';
     selectedCardsWrapper.appendChild(e.target);
     selectedCard = e.target;
-    removeCardFromDeck()
+    removeCardFromDeck();
     createMagicBtn();
   }
 }
 
 function removeCardFromDeck() {
-  const selectedCardNo = parseInt(selectedCard.getAttribute('id').split('-')[1]);
+  const selectedCardNo = parseInt(
+    selectedCard.getAttribute('id').split('-')[1]
+  );
   const selectedCardSuit = selectedCard.getAttribute('id').split('-')[0];
   const filterCriteria = {
     value: selectedCardNo,

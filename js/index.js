@@ -100,7 +100,7 @@ function createMagicBtn() {
 
 // Function to select the card that is clicked and append to selectedCardsWrapper
 function selectCard(e) {
-  if (selectedCardsWrapper.children.length === 0) {
+  if (!selectedCardsWrapper.hasChildNodes()) {
     e.target.style.left = '0px';
     selectedCardsWrapper.appendChild(e.target);
     selectedCard = e.target;

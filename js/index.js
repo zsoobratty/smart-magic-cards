@@ -9,6 +9,7 @@ const selectedCardsWrapper = document.querySelector(
 let cards = [];
 let selectedCard = '';
 
+
 // Creates an object with values and suits
 function createCards() {
   // Create an array with objects containing the value and the suit of each card

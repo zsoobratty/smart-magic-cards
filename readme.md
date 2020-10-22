@@ -23,7 +23,7 @@ Eg. the 8 of hears it picked, now all the 8's are removed from the deck and adde
   - [x] Add animation.
   - [ ] Do not use images for the cards, style them with CSS/SCSS only.
   - [x] Uncomment the tests in the `cypress/integration/magic-trick.js` file and **make sure the tests pass**.
-  - [ ] Add additional tests (we like test coverage).
+  - [x] Add additional tests (we like test coverage).
   - [ ] Usuage of drag and drop to pick a card.
   - [x] Having a way of resetting the app, withouth reloading the page.
   - [ ] Do not break any linting rules. (The linter runs before tests)

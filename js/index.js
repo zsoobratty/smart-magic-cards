@@ -88,8 +88,12 @@ function handleMagicBtn() {
     selectedCardsWrapper.append(card);
   });
   generatePlayBtn();
+  btnWrapper.removeChild(document.getElementById('shuffle'));
+  btnWrapper.removeChild(document.getElementById('flip'));
+  btnWrapper.removeChild(document.getElementById('magic'));
 }
 
+// Function to create the magic button
 function createMagicBtn() {
   const magicBtn = document.createElement('button');
   magicBtn.classList.add('btn', 'btn-lg', 'btn-secondary');
@@ -112,6 +116,7 @@ function selectCard(e) {
   }
 }
 
+// Function to remove the selected card from the cards array
 function removeCardFromDeck() {
   const selectedCardNo = parseInt(
     selectedCard.getAttribute('id').split('-')[1]
@@ -123,12 +128,13 @@ function removeCardFromDeck() {
   };
   cards = cards.filter((card) => {
     for (const key in filterCriteria) {
-      if (card[key] === undefined || card[key] !== filterCriteria[key]) return true;
+      if (card[key] === undefined || card[key] !== filterCriteria[key]) return true
     }
     return false;
   });
 }
 
+// Function to reset everything for a new game
 function handlePlayAgain() {
   selectedCard = '';
   selectedCardsWrapper.innerHTML = '';
@@ -138,10 +144,8 @@ function handlePlayAgain() {
   startGame();
 }
 
+// Function to generate the play button
 function generatePlayBtn() {
-  btnWrapper.removeChild(document.getElementById('shuffle'));
-  btnWrapper.removeChild(document.getElementById('flip'));
-  btnWrapper.removeChild(document.getElementById('magic'));
   const playBtn = document.createElement('button');
   playBtn.classList.add('btn', 'btn-lg', 'btn-secondary');
   playBtn.setAttribute('id', 'play-again');
@@ -162,17 +166,3 @@ function startGame() {
 }
 
 document.getElementById('start-game').addEventListener('click', startGame);
-
-// Crazy logic for the memories:
-// cardsWrapper.onclick = (e) => {
-//   if (selectedCardsWrapper.classList.length === 1) {
-//     const arrCard = [...e.target.classList]
-//     document.getElementById(arrCard[1]).remove()
-//     selectedCardsWrapper.classList.add(arrCard[0], arrCard[1])
-//     selectedCardsWrapper.setAttribute('id', arrCard[1])
-//     document.getElementById('shuffle').disabled = true
-//     document.getElementById('magic').hidden = false
-//   } else {
-//     alert('You have already selected a card')
-//   }
-// }

@@ -1,4 +1,26 @@
 # Smart Magic Cards
+
+## My attempt at Smart Magic Cards:
+
+After spending so much time improving my knowledge of React, going back to VanillaJS was a challenge, but one that I've learnt a lot from... with a huge thanks to https://developer.mozilla.org/en-US/docs/Web/API.
+
+I've ticked off the functionality that I've implemented so far in the requirements below, but here are some notes I have about my experience:
+- Standard requirements 
+  - Kinda just went through these one by one and added functionality. Although this worked and the app is running, I think I could've done with some careful planning, because the further I got into it, the more I was seeing duplications and functions taking on things they shouldn't be responsible for. I've managed to refactor a lot of this but doing it from the start would've saved a lot of time!
+- Testing
+   - I didn't enable the tests until I'd completed the base requirements. After turning it on I'd come across some errors, some to do with button names and then others to do with my functionality not quite doing what it was supposed to be doing in the background. Fixing the tests definitely helped to learn more about what's going on behind the scenes.
+    - I added a play again button, so I've added a test for that button, as well as a duplication of the tests without the 'start game' part to make sure it runs through fine on the next run through.
+- Animations 
+  - Conscious of time, I only briefly looked into animations as it's not something I've really looked into before. I managed to do an animation on the cards rendering, albeit a bit laggy, which I can only imagine is because I've chosen a horrible way to animate. So I'll be doing some research into this one!
+- SCSS 
+  - I've had brief encounters with CSS pre-processors, but it was only during this task that I discovered how useful they are! Being able to have variables and loops and stuff. I felt great about doing the bonus point for the scss duplications.
+
+## Improvements
+- I've looked into the drag and drop functionality and it's definitely something that doesn't look overly difficult to implement. So I'd like to try and get this in at some point.
+- I separated a lot of functions on reviewing my code after adding functionality, although I managed to separate a lot of it, there still seems to be repetition with the elements and the buttons especially. Just some things that could be done to achieve cleaner code.
+- Animations are something I need to delve further into. I watched some videos on animations and how they work, but my knowledge isn't so great on that side of things so I'll be doing some further research on that front.
+
+# The task
 Join Smart by performing a simple magic trick.
 
 A magician has a deck of cards, 52 cards, 13 of each suit (Hearts, Diamonds, Clubs and Spades).<br>

@@ -12,7 +12,7 @@ let selectedCard = '';
 // Creates an object with values and suits
 function createCards() {
   // Create an array with objects containing the value and the suit of each card
-  for (let x = 0; x <= 3; x += 1) {
+  for (let x = 0; x < suit.length; x += 1) {
     for (let i = 1; i <= 13; i += 1) {
       const cardObject = {
         value: i,

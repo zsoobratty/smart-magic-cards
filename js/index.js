@@ -97,6 +97,7 @@ function createMagicBtn() {
   magicBtn.textContent = 'Magic';
   magicBtn.style.margin = '10px';
   magicBtn.addEventListener('click', handleMagicBtn);
+  magicBtn.addEventListener('click', () => new Audio('../assets/sounds/magic.wav').play())
   btnWrapper.append(magicBtn);
 }
 
@@ -123,7 +124,7 @@ function removeCardFromDeck() {
       if (card[key] === undefined || card[key] !== filterCriteria[key]) return true;
     }
     return false;
-  });)
+  });
 }
 
 function handlePlayAgain() {

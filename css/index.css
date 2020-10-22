@@ -5956,6 +5956,11 @@ h1 {
   z-index: 50;
 }
 
+@keyframes enterFromLeft {
+  0% {
+    left: 0px;
+  }
+}
 .cards-wrapper {
   width: calc(100vw - 4rem);
   height: 300px;
@@ -5976,11 +5981,6 @@ h1 {
   border: 2px dashed white;
   border-radius: 6px;
   position: relative;
-}
-@keyframes enterFromLeft {
-  0% {
-    left: 0px;
-  }
 }
 
 .body-bg {

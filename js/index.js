@@ -35,7 +35,7 @@ function renderCards() {
     cardElement.classList.add('card', `${card.suit}-${card.value}`);
     cardElement.style.left = `${positionFromLeft}px`;
     cardElement.style.animationName = 'enterFromLeft'
-    cardElement.style.animationDuration = '0.7s'
+    cardElement.style.animationDuration = '0.5s'
     cardElement.addEventListener('click', selectCard);
     cardsWrapper.append(cardElement);
   });
@@ -106,20 +106,24 @@ function selectCard(e) {
     e.target.style.left = '0px';
     selectedCardsWrapper.appendChild(e.target);
     selectedCard = e.target;
-    const selectedCardNo = parseInt(selectedCard.getAttribute('id').split('-')[1]);
-    const selectedCardSuit = selectedCard.getAttribute('id').split('-')[0];
-    const filterCriteria = {
-      value: selectedCardNo,
-      suit: selectedCardSuit,
-    };
-    cards = cards.filter((card) => {
-      for (const key in filterCriteria) {
-        if (card[key] === undefined || card[key] !== filterCriteria[key]) return true;
-      }
-      return false;
-    });
+    removeCardFromDeck()
     createMagicBtn();
   }
+}
+
+function removeCardFromDeck() {
+  const selectedCardNo = parseInt(selectedCard.getAttribute('id').split('-')[1]);
+  const selectedCardSuit = selectedCard.getAttribute('id').split('-')[0];
+  const filterCriteria = {
+    value: selectedCardNo,
+    suit: selectedCardSuit,
+  };
+  cards = cards.filter((card) => {
+    for (const key in filterCriteria) {
+      if (card[key] === undefined || card[key] !== filterCriteria[key]) return true;
+    }
+    return false;
+  });)
 }
 
 function handlePlayAgain() {

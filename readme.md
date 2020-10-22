@@ -19,7 +19,7 @@ Eg. the 8 of hears it picked, now all the 8's are removed from the deck and adde
 - [x] When the trick is performed (by clicking the magic button), move the related cards to the picked card.
 
 #### Bonus points
-  - [ ] Find a way to remove duplications in the `cards.scss` file and generate all the classes automatically for the cards: `.hearts-1`, `.hearts-2`, ... , `.spades-13`.
+  - [x] Find a way to remove duplications in the `cards.scss` file and generate all the classes automatically for the cards: `.hearts-1`, `.hearts-2`, ... , `.spades-13`.
   - [x] Add animation.
   - [ ] Do not use images for the cards, style them with CSS/SCSS only.
   - [x] Uncomment the tests in the `cypress/integration/magic-trick.js` file and **make sure the tests pass**.

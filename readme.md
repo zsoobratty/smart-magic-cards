@@ -1,7 +1,9 @@
 # Smart Magic Cards
 
-## My attempt at Smart Magic Cards:
+## My attempt at Smart Magic Cards
+![Running](./assets/gifs/SmartGif.gif)
 
+## How it went
 After spending so much time improving my knowledge of React, going back to VanillaJS was a challenge, but one that I've learnt a lot from... with a huge thanks to https://developer.mozilla.org/en-US/docs/Web/API.
 
 I've ticked off the functionality that I've implemented so far in the requirements below, but here are some notes I have about my experience:

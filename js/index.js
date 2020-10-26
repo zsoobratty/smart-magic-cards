@@ -34,8 +34,7 @@ function renderCards() {
     cardElement.setAttribute('id', `${card.suit}-${card.value}`);
     cardElement.classList.add('card', `${card.suit}-${card.value}`);
     cardElement.style.left = `${positionFromLeft}px`;
-    cardElement.style.animation = 'enterFromLeft';
-    cardElement.style.animationDuration = '0.5s';
+    cardElement.style.animation = 'enterFromLeft 1.5s';
     cardElement.addEventListener('click', handleSelectCard);
     cardsWrapper.append(cardElement);
   });

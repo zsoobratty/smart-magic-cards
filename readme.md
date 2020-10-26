@@ -14,6 +14,7 @@ I've ticked off the functionality that I've implemented so far in the requiremen
     - I added a play again button, so I've added a test for that button, as well as a duplication of the tests without the 'start game' part to make sure it runs through fine on the next run through.
 - Animations 
   - Conscious of time, I only briefly looked into animations as it's not something I've really looked into before. I managed to do an animation on the cards rendering, albeit a bit laggy, which I can only imagine is because I've chosen a horrible way to animate. So I'll be doing some research into this one!
+  - Update on this - managed to figure out how to get smoother animations and fixed this.
 - SCSS 
   - I've had brief encounters with CSS pre-processors, but it was only during this task that I discovered how useful they are! Being able to have variables and loops and stuff. I felt great about doing the bonus point for the scss duplications.
 

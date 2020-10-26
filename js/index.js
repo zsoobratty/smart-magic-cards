@@ -34,8 +34,7 @@ function renderCards() {
     cardElement.setAttribute('id', `${card.suit}-${card.value}`);
     cardElement.classList.add('card', `${card.suit}-${card.value}`);
     cardElement.style.left = `${positionFromLeft}px`;
-    cardElement.style.animation = 'enterFromLeft 1.5s ease-out';
-
+    cardElement.style.animation = 'enterFromLeft 1s ease-out';
     cardElement.addEventListener('click', handleSelectCard);
     cardsWrapper.append(cardElement);
   });
@@ -85,6 +84,8 @@ function handleMagic() {
   );
   cardMatches.forEach((card, index) => {
     card.style.left = `${index * 30}px`;
+    card.style.animation = 'enterFromLeft 1s ease-out'
+
     selectedCardsWrapper.append(card);
   });
   createPlayBtn();
@@ -108,7 +109,8 @@ function createMagicBtn() {
 // Function to select the card that is clicked and append to selectedCardsWrapper
 function handleSelectCard(e) {
   if (!selectedCardsWrapper.hasChildNodes()) {
-    e.target.style.left = '0px';
+    e.target.style.left = '0px'
+    e.target.style.animation = 'riseUp .5s ease-out';
     selectedCardsWrapper.appendChild(e.target);
     selectedCard = e.target;
     removeCardFromDeck();

@@ -6014,6 +6014,26 @@ h1 {
     transform: translateX(0%);
   }
 }
+@keyframes riseUp {
+  0% {
+    transform: translateY(100%);
+    left: 0px;
+  }
+  100% {
+    transform: translateY(0%);
+    left: 0px;
+  }
+}
+@keyframes goAway {
+  0% {
+    transform: translateY(0%);
+    left: 0px;
+  }
+  100% {
+    transform: translateY(100%);
+    left: 0px;
+  }
+}
 .cards-wrapper {
   width: calc(100vw - 4rem);
   height: 300px;

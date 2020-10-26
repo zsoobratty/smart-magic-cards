@@ -6010,7 +6010,8 @@ h1 {
 
 @keyframes enterFromLeft {
   0% {
-    left: 0;
+    left: 0px;
+    transform: translateX(0%);
   }
 }
 .cards-wrapper {

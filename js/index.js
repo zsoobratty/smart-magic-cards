@@ -96,7 +96,7 @@ function handleMagic() {
 // Function to create the magic button
 function createMagicBtn() {
   const magicBtn = document.createElement('button');
-  magicBtn.classList.add('btn', 'btn-lg', 'btn-secondary');
+  magicBtn.className = 'btn btn-lg btn-secondary';
   magicBtn.setAttribute('id', 'magic');
   magicBtn.textContent = 'Magic';
   magicBtn.style.margin = '10px';

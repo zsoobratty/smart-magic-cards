@@ -20,7 +20,8 @@ $suits: hearts, diamonds, clubs, spades;
 
 @keyframes enterFromLeft {
   0% {
-    left: 0;
+    left: 0px;
+    transform: translateX(0%);
   }
 }
 

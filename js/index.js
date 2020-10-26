@@ -34,7 +34,8 @@ function renderCards() {
     cardElement.setAttribute('id', `${card.suit}-${card.value}`);
     cardElement.classList.add('card', `${card.suit}-${card.value}`);
     cardElement.style.left = `${positionFromLeft}px`;
-    cardElement.style.animation = 'enterFromLeft 1.5s';
+    cardElement.style.animation = 'enterFromLeft 1.5s ease-out';
+
     cardElement.addEventListener('click', handleSelectCard);
     cardsWrapper.append(cardElement);
   });
@@ -95,7 +96,7 @@ function handleMagic() {
 // Function to create the magic button
 function createMagicBtn() {
   const magicBtn = document.createElement('button');
-  magicBtn.className = 'btn btn-lg btn-secondary';
+  magicBtn.classList.add('btn','btn-lg', 'btn-secondary');
   magicBtn.setAttribute('id', 'magic');
   magicBtn.textContent = 'Magic';
   magicBtn.style.margin = '10px';

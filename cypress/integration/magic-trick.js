@@ -82,7 +82,7 @@ describe('Play game', () => {
     });
 
     /* Click on the 'Play Again?' button */
-    cy.contains('Play Again?').click()
+    cy.contains('Play Again?').click();
 
     /* Each suit is rederted with 13 cards each (hearts, spades, diamonds, clubs) */
     suits.forEach((suit) => {

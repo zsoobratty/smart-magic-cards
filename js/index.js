@@ -1,11 +1,11 @@
 const suit = ['hearts', 'spades', 'diamonds', 'clubs'];
 const cardsWrapper = document.querySelector('.cards-wrapper');
 const btnWrapper = document.querySelector(
-  '.btn-wrapper'
-); /* eslint-disable-line */
+  '.btn-wrapper' /* eslint-disable-line */
+);
 const selectedCardsWrapper = document.querySelector(
-  '.selected-cards'
-); /* eslint-disable-line */
+  '.selected-cards' /* eslint-disable-line */
+);
 let cards = [];
 let selectedCard = '';
 
@@ -34,7 +34,7 @@ function renderCards() {
     cardElement.setAttribute('id', `${card.suit}-${card.value}`);
     cardElement.classList.add('card', `${card.suit}-${card.value}`);
     cardElement.style.left = `${positionFromLeft}px`;
-    cardElement.style.animation = 'enterFromLeft 1s ease-out';
+    cardElement.style.animation = 'enterFromLeft 1s ease-in';
     cardElement.addEventListener('click', handleSelectCard);
     cardsWrapper.append(cardElement);
   });
@@ -80,11 +80,11 @@ function createButtons() {
 function handleMagic() {
   const selectedCardValue = selectedCard.getAttribute('data-value');
   const cardMatches = document.querySelectorAll(
-    `[data-value='${selectedCardValue}']`
+    `[data-value='${selectedCardValue}']` /* eslint-disable-line */
   );
   cardMatches.forEach((card, index) => {
     card.style.left = `${index * 30}px`;
-    card.style.animation = 'enterFromLeft 1s ease-out'
+    card.style.animation = 'enterFromLeft 1s ease-out';
 
     selectedCardsWrapper.append(card);
   });
@@ -97,7 +97,7 @@ function handleMagic() {
 // Function to create the magic button
 function createMagicBtn() {
   const magicBtn = document.createElement('button');
-  magicBtn.classList.add('btn','btn-lg', 'btn-secondary');
+  magicBtn.classList.add('btn', 'btn-lg', 'btn-secondary');
   magicBtn.setAttribute('id', 'magic');
   magicBtn.textContent = 'Magic';
   magicBtn.style.margin = '10px';
@@ -109,7 +109,7 @@ function createMagicBtn() {
 // Function to select the card that is clicked and append to selectedCardsWrapper
 function handleSelectCard(e) {
   if (!selectedCardsWrapper.hasChildNodes()) {
-    e.target.style.left = '0px'
+    e.target.style.left = '0px';
     e.target.style.animation = 'riseUp .5s ease-out';
     selectedCardsWrapper.appendChild(e.target);
     selectedCard = e.target;
@@ -121,7 +121,7 @@ function handleSelectCard(e) {
 // Function to remove the selected card from the cards array
 function removeCardFromDeck() {
   const selectedCardNo = parseInt(
-    selectedCard.getAttribute('id').split('-')[1]
+    selectedCard.getAttribute('id').split('-')[1], 8 /* eslint-disable-line */
   );
   const selectedCardSuit = selectedCard.getAttribute('id').split('-')[0];
   const filterCriteria = {
@@ -130,7 +130,7 @@ function removeCardFromDeck() {
   };
   cards = cards.filter((card) => {
     for (const key in filterCriteria) {
-      if (card[key] === undefined || card[key] !== filterCriteria[key]) return true
+      if (card[key] === undefined || card[key] !== filterCriteria[key]) return true;
     }
     return false;
   });

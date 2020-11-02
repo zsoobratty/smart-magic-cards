@@ -29,22 +29,9 @@ $suits: hearts, diamonds, clubs, spades;
   0% {   
     transform: translateY(100%);
     left: 0px;
-
   }
   100% {
     transform: translateY(0%);
-    left: 0px;
-
-  }
-}
-
-@keyframes goAway {
-  0% {
-    transform: translateY(0%);
-    left: 0px;
-  }
-  100% {
-    transform: translateY(100%);
     left: 0px;
   }
 }
@@ -55,7 +42,6 @@ $suits: hearts, diamonds, clubs, spades;
   overflow: scroll;
   margin: 0 2rem;
   border-radius: 10px;
-
 
   &.hidden {
     .card {
@@ -74,7 +60,5 @@ $suits: hearts, diamonds, clubs, spades;
     border: 2px dashed white;
     border-radius: 6px;
     position: relative;
+  }
 }
-
-}
-
